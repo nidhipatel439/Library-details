@@ -1,0 +1,8 @@
+extend layout 
+
+block layout-content 
+    - var description = library.querySelector("description").textContent 
+    h1 #{library.querySelector("name").textContent}
+    p #{library.querySelector("address").textContent}
+    p #{library.querySelector("phoneNumber").textContent}
+    p !{description}

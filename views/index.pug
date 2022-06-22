@@ -1,0 +1,12 @@
+extends layout 
+
+block layout-content 
+    h1 Toronto public libraries
+    form(action="/library" method="get") 
+        label(for="library") Select library: 
+        select(id="library" name="id")
+            each library in libraries
+                -var id = library.id;
+                -var libraryName = library.querySelector("name").textContent;
+                option(value=`${id}`) #{libraryName}
+        input(type="submit" value="view details")
